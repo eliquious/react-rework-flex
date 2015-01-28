@@ -92,7 +92,7 @@ var Col = React.createClass({
         //     }
         // });
 
-        return (<div className={classes}>
+        return (<div {...this.props} className={classes}>
             {this.props.children}
             </div>
         );
