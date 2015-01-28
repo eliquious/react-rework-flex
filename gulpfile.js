@@ -28,7 +28,7 @@ var JsLintBeepReporter = function() {
 
 // 'jsx' transforms all the JSX into JS
 gulp.task('jsx', function() {
-    return gulp.src('./src/jsx/*.jsx')
+    return gulp.src('./src/**/*.jsx')
         .pipe(plumber({
             errorHandler: errorHandler
         }))
@@ -36,14 +36,26 @@ gulp.task('jsx', function() {
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
         .pipe(JsLintBeepReporter())
-        .pipe(gulp.dest('dist/jsx'));
+        .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('js', function() {
+    return gulp.src('./src/**/*.js')
+        .pipe(plumber({
+            errorHandler: errorHandler
+        }))
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(JsLintBeepReporter())
+        .pipe(gulp.dest('dist/'));
 });
 
 // 'watch' reruns 'jsx' when files are modified
 gulp.task('watch', function() {
     gulp.watch('./src/jsx/*.jsx', ['jsx']);
+    gulp.watch('./src/**/*.js', ['js']);
 });
 
-gulp.task('default', ['watch', 'jsx']);
+gulp.task('default', ['watch', 'jsx', 'js']);
 
-gulp.task('build', ['jsx']);
+gulp.task('build', ['jsx', 'js']);
