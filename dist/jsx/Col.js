@@ -32,6 +32,14 @@ var Col = React.createClass({displayName: "Col",
         // mdOffset: React.PropTypes.number,
         // lgOffset: React.PropTypes.number
     },
+    getDefaultProps: function(){
+        return {
+            gridName: 'grid',
+            rowName: 'row',
+            colName: 'col',
+            numCols: 12
+        };
+    },
     render: function(){
         var classes = '';
         var base = this.props.gridName + '-' + 
