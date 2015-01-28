@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     react = require('gulp-react'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    through =require('through2');
 
 
 // Plumber handler which beeps on error
@@ -34,8 +35,8 @@ gulp.task('jsx', function() {
         .pipe(react())
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(JsLintBeepReporter());
-        // .pipe(gulp.dest('dist/jsx'));
+        .pipe(JsLintBeepReporter())
+        .pipe(gulp.dest('dist/jsx'));
 });
 
 // 'watch' reruns 'jsx' when files are modified
@@ -44,3 +45,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['watch', 'jsx']);
+
+gulp.task('build', ['jsx']);

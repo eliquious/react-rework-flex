@@ -1,12 +1,37 @@
 {
+  "name": "react-rework-flex",
+  "version": "1.0.0",
+  "description": "React grid system using rework-flex-grid",
+  "main": "dist/jsx/index.js",
   "dependencies": {
-    "react": "^0.12.2"
+    "react": "~0.12.2"
   },
   "devDependencies": {
-    "gulp-plumber": "^0.6.6",
-    "gulp": "^3.8.10",
-    "gulp-react": "^2.0.0",
-    "gulp-jshint": "^1.9.0",
-    "del": "^1.1.1"
-  }
+    "del": "~1.1.1",
+    "gulp": "~3.8.10",
+    "gulp-jshint": "~1.9.0",
+    "gulp-plumber": "~0.6.6",
+    "gulp-react": "~2.0.0",
+    "jshint-stylish": "^1.0.0",
+    "through2": "^0.6.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eliquious/react-rework-flex.git"
+  },
+  "keywords": [
+    "react",
+    "grid",
+    "flex",
+    "rework"
+  ],
+  "author": "eliquious (Max Franks)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eliquious/react-rework-flex/issues"
+  },
+  "homepage": "https://github.com/eliquious/react-rework-flex"
 }

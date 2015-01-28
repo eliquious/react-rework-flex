@@ -1,6 +1,6 @@
 var React = require('react');
 
-var Grid = React.createClass({
+var Grid = React.createClass({displayName: "Grid",
     propTypes: {
         gridName: React.PropTypes.string,
         numCols: React.PropTypes.number
@@ -15,9 +15,9 @@ var Grid = React.createClass({
     },
     render: function(){
         return (
-            <div {...this.props} className={this.props.gridName}>
-                {this.props.children}
-            </div>
+            React.createElement("div", React.__spread({},  this.props, {className: this.props.gridName}), 
+                this.props.children
+            )
         );
     }
 });
