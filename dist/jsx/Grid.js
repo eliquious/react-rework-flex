@@ -1,4 +1,5 @@
-var React = require('react');
+var React = require('react'),
+    utils = require('../js/utils');
 
 var Grid = React.createClass({displayName: "Grid",
     propTypes: {
@@ -13,10 +14,23 @@ var Grid = React.createClass({displayName: "Grid",
             numCols: 12
         };
     },
+      // renderChildren: function(){
+      //   return React.Children.map(this.props.children, function(child){
+      //       return React.addons.cloneWithProps(child, {
+      //         gridName: this.props.gridName,
+      //         rowName: this.props.rowName,
+      //         colName: this.props.colName,
+      //         numCols: this.props.numCols
+      //       });
+      //     // } else {
+      //     //   return child;
+      //     // }
+      //   }.bind(this));
+      // },
     render: function(){
         return (
-            React.createElement("div", React.__spread({},  this.props, {className: this.props.gridName}), 
-                this.props.children
+            React.createElement("div", {className: this.props.gridName}, 
+            utils.renderChildren(this.props)
             )
         );
     }

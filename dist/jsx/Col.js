@@ -1,7 +1,10 @@
-var React = require('react');
+var React = require('react'),
+    utils = require('../js/utils');
+
 // var cx = React.addons.classSet;
 
 var Col = React.createClass({displayName: "Col",
+    // mixins: [GridMixin],
     propTypes: {
 
         // grid/row/col names
@@ -40,6 +43,20 @@ var Col = React.createClass({displayName: "Col",
             numCols: 12
         };
     },
+      // renderChildren: function(){
+      //   return React.Children.map(this.props.children, function(child){
+      //     // if (this.isGridType(child)) {
+      //       return React.addons.cloneWithProps(child, {
+      //         gridName: this.props.gridName,
+      //         rowName: this.props.rowName,
+      //         colName: this.props.colName,
+      //         numCols: this.props.numCols
+      //       });
+      //     // } else {
+      //     //   return child;
+      //     // }
+      //   }.bind(this));
+      // },
     render: function(){
         var classes = '';
         var base = this.props.gridName + '-' + 
@@ -93,7 +110,7 @@ var Col = React.createClass({displayName: "Col",
         // });
 
         return (React.createElement("div", {className: classes}, 
-            this.props.children
+            utils.renderChildren(this.props)
             )
         );
     }
