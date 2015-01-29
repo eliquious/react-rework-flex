@@ -1,6 +1,6 @@
 {
   "name": "react-rework-flex",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React grid system using rework-flex-grid",
   "main": "dist/jsx/index.js",
   "dependencies": {
