@@ -14,19 +14,6 @@ var Grid = React.createClass({displayName: "Grid",
             numCols: 12
         };
     },
-      // renderChildren: function(){
-      //   return React.Children.map(this.props.children, function(child){
-      //       return React.addons.cloneWithProps(child, {
-      //         gridName: this.props.gridName,
-      //         rowName: this.props.rowName,
-      //         colName: this.props.colName,
-      //         numCols: this.props.numCols
-      //       });
-      //     // } else {
-      //     //   return child;
-      //     // }
-      //   }.bind(this));
-      // },
     render: function(){
         return (
             React.createElement("div", {className: this.props.gridName}, 

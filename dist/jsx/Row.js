@@ -15,25 +15,6 @@ var Row = React.createClass({displayName: "Row",
             numCols: 12
         };
     },
-      // isGridType: function(component){
-      //   return (component.type === Grid.type ||
-      //           component.type === Col.type ||
-      //           component.type === Row.type);
-      // },
-      // renderChildren: function(){
-      //   return React.Children.map(this.props.children, function(child){
-      //     // if (this.isGridType(child)) {
-      //       return React.addons.cloneWithProps(child, {
-      //         gridName: this.props.gridName,
-      //         rowName: this.props.rowName,
-      //         colName: this.props.colName,
-      //         numCols: this.props.numCols
-      //       });
-      //     // } else {
-      //     //   return child;
-      //     // }
-      //   }.bind(this));
-      // },
     render: function(){
         var gridrow = this.props.gridName + '-' + this.props.rowName;
         return (React.createElement("div", {className: gridrow}, 

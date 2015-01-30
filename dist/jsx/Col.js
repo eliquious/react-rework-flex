@@ -43,20 +43,6 @@ var Col = React.createClass({displayName: "Col",
             numCols: 12
         };
     },
-      // renderChildren: function(){
-      //   return React.Children.map(this.props.children, function(child){
-      //     // if (this.isGridType(child)) {
-      //       return React.addons.cloneWithProps(child, {
-      //         gridName: this.props.gridName,
-      //         rowName: this.props.rowName,
-      //         colName: this.props.colName,
-      //         numCols: this.props.numCols
-      //       });
-      //     // } else {
-      //     //   return child;
-      //     // }
-      //   }.bind(this));
-      // },
     render: function(){
         var classes = '';
         var base = this.props.gridName + '-' + 
