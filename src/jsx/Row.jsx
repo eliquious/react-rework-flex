@@ -17,7 +17,12 @@ var Row = React.createClass({
     },
     render: function(){
         var gridrow = this.props.gridName + '-' + this.props.rowName;
-        return (<div className={gridrow}>
+        
+        var classes = gridrow;
+        if(this.props.className){
+            classes += ' ' + this.props.className;
+        }
+        return (<div className={classes}>
             {utils.renderChildren(this.props)}
             </div>
         );

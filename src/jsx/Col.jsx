@@ -57,7 +57,8 @@ var Col = React.createClass({
         var lgClass = (typeof this.props.lg === 'number') ?
             base + this.props.lg + '-' + this.props.numCols + '--lg' : false;
         var allClasses = (typeof this.props.all === 'number') ?
-            base + this.props.lg + '-' + this.props.numCols : false;
+            (this.props.all === this.props.numCols ? 
+                base + this.props.all : base + this.props.all + '-' + this.props.numCols) : false;
 
         [smClass, mdClass, lgClass, allClasses].forEach(function(value){
             if (value) {

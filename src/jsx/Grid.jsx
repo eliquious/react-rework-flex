@@ -15,8 +15,12 @@ var Grid = React.createClass({
         };
     },
     render: function(){
+        var classes = this.props.className;
+        if(classes){
+            classes += this.props.gridName;
+        }
         return (
-            <div className={this.props.gridName}>
+            <div className={classes}>
             {utils.renderChildren(this.props)}
             </div>
         );
