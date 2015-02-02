@@ -96,7 +96,15 @@ var Col = React.createClass({
         //     }
         // });
 
-        return (<div className={classes}>
+        if(this.props.className) {
+            classes += ' ' + this.props.className;
+        }
+
+        var style = {};
+        if(this.props.style){
+            style = this.props.style;
+        }
+        return (<div style={style} className={classes}>
             {utils.renderChildren(this.props)}
             </div>
         );

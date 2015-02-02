@@ -22,7 +22,12 @@ var Row = React.createClass({
         if(this.props.className){
             classes += ' ' + this.props.className;
         }
-        return (<div className={classes}>
+
+        var style = {};
+        if (this.props.style) {
+            style = this.props.style;
+        }
+        return (<div style={style} className={classes}>
             {utils.renderChildren(this.props)}
             </div>
         );
